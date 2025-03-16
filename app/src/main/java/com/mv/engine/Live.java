@@ -71,7 +71,7 @@ public class Live extends Component {
      *
      * @param bitmap  输入, ARGB8888的图片, 可以通过ImageUtils.bitmapToNv21转化
      * @param faceBox 输入, 人脸框
-     * @return 置信度0~100, 越大代表越可能是活体
+     * @return 置信度0~1, 越大代表越可能是活体
      */
     public float detect(Bitmap bitmap, FaceBox faceBox) {
         return nativeDetectYuv(ImageUtils.bitmapToNv21(bitmap), bitmap.getWidth(), bitmap.getHeight(), 1, faceBox.left, faceBox.top, faceBox.right, faceBox.bottom);
@@ -85,7 +85,7 @@ public class Live extends Component {
      * @param previewHeight 输入, 图片高度
      * @param orientation   朝向(取值范围1-8)
      * @param faceBox       人脸框
-     * @return 置信度0~100, 越大代表越可能是活体
+     * @return 置信度0~1, 越大代表越可能是活体
      */
     public float detect(byte[] yuv, int previewWidth, int previewHeight, int orientation, FaceBox faceBox) {
         if (previewWidth * previewHeight * 3 / 2 != yuv.length) {

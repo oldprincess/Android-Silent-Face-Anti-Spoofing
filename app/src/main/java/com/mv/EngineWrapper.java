@@ -141,7 +141,7 @@ public class EngineWrapper {
      *
      * @param bitmap  输入, ARGB8888的图片, 可以通过ImageUtils.bitmapToNv21转化
      * @param faceBox 输入, 人脸框
-     * @return 置信度0~100, 越大代表越可能是活体
+     * @return 置信度0~1, 越大代表越可能是活体
      */
     public float detectLive(Bitmap bitmap, FaceBox faceBox) {
         return live.detect(bitmap, faceBox);
@@ -163,7 +163,7 @@ public class EngineWrapper {
      *                    <p>7: 水平、垂直翻转 然后转置</p>
      *                    <p>8: 逆时针旋转90度</p>
      * @param faceBox     人脸框
-     * @return 置信度0~100, 越大代表越可能是活体
+     * @return 置信度0~1, 越大代表越可能是活体
      */
     public float detectLive(byte[] yuv, int width, int height, int orientation, FaceBox faceBox) {
         return live.detect(yuv, width, height, orientation, faceBox);
