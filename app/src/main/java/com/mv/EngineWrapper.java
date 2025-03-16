@@ -33,9 +33,9 @@ public class EngineWrapper {
     /**
      * 初始化模型
      *
-     * @return 成功初始化与否. 如果失败, 则检查asset目录是否正确存放了模型配置文件
-     * @throws JSONException asset文件live/config.json解析json错误
-     * @throws IOException   asset文件live/config.json读取错误
+     * @return 成功初始化与否. 如果失败, 则检查assets目录是否正确存放了模型配置文件
+     * @throws JSONException assets文件live/config.json解析json错误
+     * @throws IOException   assets文件live/config.json读取错误
      */
     public boolean init() throws JSONException, IOException {
         int ret = faceDetector.loadModule(assetManager);

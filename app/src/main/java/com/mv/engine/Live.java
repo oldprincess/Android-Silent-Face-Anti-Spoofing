@@ -99,8 +99,8 @@ public class Live extends Component {
      *
      * @param assetManager 通过getAssets获取
      * @return 模型配置
-     * @throws JSONException asset文件live/config.json解析json错误
-     * @throws IOException   asset文件live/config.json读取错误
+     * @throws JSONException assets文件live/config.json解析json错误
+     * @throws IOException   assets文件live/config.json读取错误
      */
     private List<ModelConfig> parseConfig(AssetManager assetManager) throws JSONException, IOException {
         InputStream inputStream = assetManager.open("live/config.json");
